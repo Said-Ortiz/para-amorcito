@@ -1,0 +1,683 @@
+/* =================================
+   ESTILO GENERAL (TEMÁTICA AZUL MARINO)
+================================= */
+
+:root {
+    --background: #081321;
+    --surface: #102238;
+    --wine: #315b85;
+    --gold: #9bbbd8;
+    --pink: #c5d9ec;
+    --white: #edf5fc;
+    --muted: #aabed1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+/* =================================
+   NAVEGACIÓN
+================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8, 19, 33, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(155, 187, 216, 0.15);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--gold);
+}
+
+.logo span {
+    color: var(--wine);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    font-size: 12px;
+    color: var(--muted);
+    transition: .3s;
+}
+
+.navbar nav a:hover {
+    color: var(--gold);
+}
+
+.music-button {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 9px 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.music-button:hover {
+    background: var(--gold);
+    color: var(--background);
+}
+
+/* =================================
+   STICKERS Y DECORACIONES REPARTIDAS
+================================= */
+
+.sticker-box {
+    margin: 0 auto 22px;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid rgba(155, 187, 216, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.35s ease;
+}
+
+.sticker-box:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--gold);
+}
+
+.sticker-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.hero-sticker {
+    width: 145px;
+    margin-bottom: 24px;
+}
+
+.letter-sticker {
+    width: 150px;
+    margin: 0 auto 28px;
+}
+
+.reason-sticker {
+    width: 155px;
+    margin: 0 auto 20px;
+}
+
+.gif-sticker {
+    width: 190px;
+    margin: 0 auto 24px;
+}
+
+.surprise-sticker {
+    width: 220px;
+    max-width: 100%;
+    margin: 0 auto 22px;
+}
+
+/* =================================
+   PORTADA
+================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 130px 20px 85px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at center, #183656 0%, #0d1d31 42%, #081321 78%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(155, 187, 216, 0.15);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(49, 91, 133, 0.25);
+}
+
+.date {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    animation: fadeUp 1.5s ease;
+}
+
+.subtitle,
+.section-subtitle {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 8vw, 90px);
+    line-height: 1.1;
+    margin: 22px 0;
+    font-weight: 400;
+}
+
+.hero h1 span,
+.section h2 span {
+    color: var(--pink);
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 550px;
+    margin: 0 auto 35px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: 1px solid var(--gold);
+    background: linear-gradient(135deg, #315b85, #1b3856);
+    color: var(--white);
+    font-family: inherit;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(49, 91, 133, 0.45);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator span {
+    display: block;
+    color: var(--gold);
+    font-size: 25px;
+    animation: bounce 1.5s infinite;
+}
+
+/* =================================
+   SECCIONES
+================================= */
+
+.section {
+    padding: 110px 8%;
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 400;
+    margin: 18px 0;
+}
+
+.section-description {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 45px;
+}
+
+/* =================================
+   GALERÍA
+================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.photo-card {
+    padding: 12px;
+    background: var(--surface);
+    border: 1px solid rgba(155, 187, 216, 0.25);
+    border-radius: 8px;
+    transition: .4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.photo-card p {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 20px;
+    padding: 14px 5px 5px;
+}
+
+.photo-placeholder {
+    height: 300px;
+    display: grid;
+    place-items: center;
+    background: #142a45;
+    color: var(--wine);
+    font-size: 50px;
+}
+
+/* =================================
+   CARTA
+================================= */
+
+.letter-section {
+    background: linear-gradient(180deg, #081321, #0f2136, #081321);
+}
+
+.letter-card {
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 50px;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid rgba(155, 187, 216, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.letter-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.9;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.letter-card .letter-signature {
+    color: var(--gold);
+    text-align: right;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* =================================
+   NUESTRA HISTORIA
+================================= */
+
+.timeline {
+    max-width: 750px;
+    margin: 60px auto;
+    text-align: left;
+    border-left: 1px solid var(--gold);
+    padding-left: 35px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 65px;
+}
+
+.timeline-item > span {
+    position: absolute;
+    left: -46px;
+    top: 10px;
+    color: var(--wine);
+    font-size: 22px;
+}
+
+.timeline-content {
+    background: var(--surface);
+    border: 1px solid rgba(155, 187, 216, 0.25);
+    border-radius: 12px;
+    padding: 15px;
+    transition: .4s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-content img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Para las capturas de pantalla */
+.timeline-content img.timeline-screenshot {
+    object-fit: contain;
+    background: #060e18;
+    height: 300px;
+}
+
+.timeline-content img.foto-futuro {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    object-position: center;
+    background: #060e18;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.timeline-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 13px;
+    padding-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .timeline {
+        padding-left: 25px;
+        margin-left: 10px;
+    }
+
+    .timeline-item > span {
+        left: -36px;
+    }
+
+    .timeline-content img {
+        height: 240px;
+    }
+
+    .timeline-content h3 {
+        font-size: 26px;
+    }
+}
+
+/* =================================
+   RAZONES
+================================= */
+
+.reasons-section {
+    background: #0c1b2e;
+}
+
+.reason-card {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 45px 30px;
+    border: 1px solid rgba(155, 187, 216, 0.25);
+    border-radius: 15px;
+    background: var(--surface);
+}
+
+.reason-card span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.reason-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    min-height: 100px;
+    display: grid;
+    place-items: center;
+    margin: 22px 0;
+}
+
+/* =================================
+   CUMPLEAÑOS
+================================= */
+
+.birthday-message {
+    max-width: 650px;
+    margin: 35px auto;
+    padding: 45px 30px;
+    background: linear-gradient(135deg, #17304d, #0b1829);
+    border: 1px solid rgba(155, 187, 216, 0.25);
+    border-radius: 15px;
+}
+
+.birthday-message p {
+    color: var(--muted);
+    line-height: 2;
+    font-size: 14px;
+}
+
+.birthday-message h3 {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    margin-top: 25px;
+}
+
+/* =================================
+   SORPRESA FINAL
+================================= */
+
+.surprise-section {
+    background: radial-gradient(circle, #17304d, #081321 70%);
+    padding-bottom: 150px;
+}
+
+.surprise-message {
+    max-width: 600px;
+    margin: 35px auto 0;
+    padding: 35px;
+    border: 1px solid var(--gold);
+    border-radius: 12px;
+    background: rgba(16, 34, 56, 0.85);
+    animation: fadeUp 1s ease;
+}
+
+.surprise-message h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.surprise-message p {
+    color: var(--muted);
+    line-height: 2;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =================================
+   CORAZONES AZULES FLOTANTES
+================================= */
+
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    color: #7ea8d1;
+    opacity: .6;
+    animation: floatHeart linear forwards;
+}
+
+/* =================================
+   PIE DE PÁGINA
+================================= */
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #050c16;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer p {
+    color: var(--gold);
+}
+
+/* =================================
+   ANIMACIONES
+================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+}
+
+@keyframes floatHeart {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: .65; }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =================================
+   RESPONSIVE - CELULARES
+================================= */
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 14px 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .photo-card img,
+    .photo-placeholder {
+        height: 220px;
+    }
+
+    .section {
+        padding: 85px 5%;
+    }
+
+    .letter-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 320px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+    }
+
+    .date {
+        letter-spacing: 3px;
+    }
+
+    .reason-card {
+        padding: 35px 15px;
+    }
+
+    .letter-card p {
+        font-size: 19px;
+    }
+
+    .hero-sticker,
+    .letter-sticker,
+    .reason-sticker {
+        width: 130px;
+    }
+}
